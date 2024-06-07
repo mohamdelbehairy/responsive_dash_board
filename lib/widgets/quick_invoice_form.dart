@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:responsive_dash_board/widgets/custom_button.dart';
 
 import 'title_text_field.dart';
 
@@ -27,7 +28,13 @@ class QuickInvoiceForm extends StatelessWidget {
                   title: 'Item name', hintText: 'Type customer name')),
           SizedBox(width: 16),
           Expanded(child: TitleTextField(title: 'Item mount', hintText: 'USD')),
-        ])
+        ]),
+        Row(
+          children: [
+            Expanded(child: CustomButton()),
+            Expanded(child: CustomButton()),
+          ],
+        )
       ],
     );
   }
