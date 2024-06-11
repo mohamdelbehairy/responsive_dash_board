@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:responsive_dash_board/widgets/custom_dot.dart';
 import 'package:responsive_dash_board/widgets/custom_drawer.dart';
 import 'package:responsive_dash_board/widgets/my_cards_page_view.dart';
 
@@ -16,7 +17,8 @@ class DashBoardDesktopLayout extends StatelessWidget {
         SizedBox(width: 32),
         Expanded(flex: 2, child: AllExpensessAndQuickInvoicSection()),
         SizedBox(width: 24),
-        Expanded(child: MyCardsPageView())
+        // Expanded(child: MyCardsPageView())
+        CustomDotIndicator(isActive: true)
       ],
     );
   }
