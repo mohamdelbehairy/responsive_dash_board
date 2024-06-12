@@ -9,6 +9,7 @@ class TransctionHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TransctionHistoryHeader(),
         SizedBox(height: 20),
