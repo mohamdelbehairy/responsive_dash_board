@@ -15,8 +15,9 @@ class TransctionItem extends StatelessWidget {
         child: ListTile(
             title:
                 Text(transctionModel.title, style: AppStyles.styleSemiBold16),
-            subtitle:
-                Text(transctionModel.date, style: AppStyles.styleReqular16),
+            subtitle: Text(transctionModel.date,
+                style: AppStyles.styleReqular16
+                    .copyWith(color: const Color(0xFFAAAAAA))),
             trailing: Text(transctionModel.amount,
                 style: AppStyles.styleSemiBold20.copyWith(
                     color: transctionModel.isWithdrawal
