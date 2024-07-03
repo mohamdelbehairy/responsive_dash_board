@@ -34,7 +34,6 @@ class DashBoardDesktopLayout extends StatelessWidget {
                           padding: EdgeInsets.only(top: 40),
                           child: Column(
                             children: [
-                              SizedBox(height: 40),
                               MyCardAndTranscationHistorySection(),
                               SizedBox(height: 24),
                               Expanded(child: IncomeSection()),
