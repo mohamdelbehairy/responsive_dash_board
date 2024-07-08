@@ -28,7 +28,7 @@ class MyCard extends StatelessWidget {
                     style:
                         AppStyles.styleReqular16.copyWith(color: Colors.white)),
                 subtitle:
-                    const Text('Syah Bandi', style: AppStyles.styleMedium20),
+                     Text('Syah Bandi', style: AppStyles.styleMedium20),
                 trailing: SvgPicture.asset(Assets.imagesGallery)),
             const Expanded(child: SizedBox()),
             Padding(

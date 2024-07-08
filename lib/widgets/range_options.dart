@@ -14,10 +14,10 @@ class RangeOptions extends StatelessWidget {
           shape: RoundedRectangleBorder(
               side: const BorderSide(width: 1, color: Color(0xFFF1F1F1)),
               borderRadius: BorderRadius.circular(12))),
-      child: const Row(
+      child:  Row(
         children: [
           Text('Monthly', style: AppStyles.styleMedium16),
-          Icon(Icons.keyboard_arrow_down, color: Color(0xFF064061))
+          const Icon(Icons.keyboard_arrow_down, color: Color(0xFF064061))
         ],
       ),
     );
