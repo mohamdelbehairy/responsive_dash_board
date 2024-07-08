@@ -34,7 +34,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
             titlePositionPercentageOffset: activeIndex == 0 ? 1.5 : null,
             value: 40,
             title: activeIndex == 0 ? 'Design services' : '40%',
-            titleStyle: AppStyles.styleMedium16
+            titleStyle: AppStyles.styleMedium16(context)
                 .copyWith(color: activeIndex == 0 ? null : Colors.white),
             radius: activeIndex == 0 ? 60 : 50,
             color: const Color(0xff208BC7)),
@@ -42,7 +42,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
             titlePositionPercentageOffset: activeIndex == 1 ? 2.2 : null,
             value: 25,
             title: activeIndex == 1 ? 'Design product' : '25%',
-            titleStyle: AppStyles.styleMedium16
+            titleStyle: AppStyles.styleMedium16(context)
                 .copyWith(color: activeIndex == 1 ? null : Colors.white),
             radius: activeIndex == 1 ? 60 : 50,
             color: const Color(0xff4DB7F2)),
@@ -50,7 +50,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
             titlePositionPercentageOffset: activeIndex == 2 ? 1.4 : null,
             value: 20,
             title: activeIndex == 2 ? 'Design royalti' : '20%',
-            titleStyle: AppStyles.styleMedium16
+            titleStyle: AppStyles.styleMedium16(context)
                 .copyWith(color: activeIndex == 2 ? null : Colors.white),
             radius: activeIndex == 2 ? 60 : 50,
             color: const Color(0xff064060)),
@@ -58,7 +58,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
             titlePositionPercentageOffset: activeIndex == 3 ? 1.5 : null,
             value: 22,
             title: activeIndex == 3 ? 'Other' : '22%',
-            titleStyle: AppStyles.styleMedium16
+            titleStyle: AppStyles.styleMedium16(context)
                 .copyWith(color: activeIndex == 3 ? null : Colors.white),
             radius: activeIndex == 3 ? 60 : 50,
             color: const Color(0xffE2DECD)),

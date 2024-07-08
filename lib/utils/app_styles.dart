@@ -1,72 +1,98 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/utils/size_config.dart';
 
 abstract class AppStyles {
-  static TextStyle styleReqular16 = TextStyle(
-      color: const Color(0xFF064060),
-      fontSize: getResponsiveFontSize(fontSize: 16),
-      fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w400);
+  static TextStyle styleReqular16(context) {
+    return TextStyle(
+        color: const Color(0xFF064060),
+        fontSize: getResponsiveFontSize(context, fontSize: 16),
+        fontFamily: 'Montserrat',
+        fontWeight: FontWeight.w400);
+  }
 
-  static TextStyle styleMedium16 = TextStyle(
+  static TextStyle styleMedium16(context) {
+    return TextStyle(
+        color: const Color(0xFF064061),
+        fontSize: getResponsiveFontSize(context, fontSize: 16),
+        fontFamily: 'Montserrat',
+        fontWeight: FontWeight.w500);
+  }
+
+  static TextStyle styleSemiBold16(BuildContext context) {
+    return TextStyle(
       color: const Color(0xFF064061),
-      fontSize: getResponsiveFontSize(fontSize: 16),
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w500);
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static TextStyle styleSemiBold16 = TextStyle(
+  static TextStyle styleSemiBold20(BuildContext context) {
+    return TextStyle(
       color: const Color(0xFF064061),
-      fontSize: getResponsiveFontSize(fontSize: 16),
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w600);
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static TextStyle styleSemiBold20 = TextStyle(
-      color: const Color(0xFF064061),
-      fontSize: getResponsiveFontSize(fontSize: 20),
-      fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w600);
-
-  static TextStyle styleReqular12 = TextStyle(
+  static TextStyle styleRegular12(BuildContext context) {
+    return TextStyle(
       color: const Color(0xFFAAAAAA),
-      fontSize: getResponsiveFontSize(fontSize: 12),
+      fontSize: getResponsiveFontSize(context, fontSize: 12),
       fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w400);
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static TextStyle styleSemiBold24 = TextStyle(
+  static TextStyle styleSemiBold24(BuildContext context) {
+    return TextStyle(
       color: const Color(0xFF4EB7F2),
-      fontSize: getResponsiveFontSize(fontSize: 24),
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
       fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w600);
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static TextStyle styleReqular14 = TextStyle(
+  static TextStyle styleRegular14(BuildContext context) {
+    return TextStyle(
       color: const Color(0xFFAAAAAA),
-      fontSize: getResponsiveFontSize(fontSize: 14),
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w400);
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static TextStyle styleSemiBold18 = TextStyle(
+  static TextStyle styleSemiBold18(BuildContext context) {
+    return TextStyle(
       color: const Color(0xFFFFFFFF),
-      fontSize: getResponsiveFontSize(fontSize: 18),
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w600);
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static TextStyle styleBold16 = TextStyle(
+  static TextStyle styleBold16(BuildContext context) {
+    return TextStyle(
       color: const Color(0xFF4EB7F2),
-      fontSize: getResponsiveFontSize(fontSize: 16),
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w700);
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static TextStyle styleMedium20 = TextStyle(
+  static TextStyle styleMedium20(BuildContext context) {
+    return TextStyle(
       color: const Color(0xFFFFFFFF),
-      fontSize: getResponsiveFontSize(fontSize: 20),
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontFamily: 'Montserrat',
-      fontWeight: FontWeight.w500);
+      fontWeight: FontWeight.w500,
+    );
+  }
 }
 
-double getResponsiveFontSize({required double fontSize}) {
-  double scallFactor = getScallFactor();
+double getResponsiveFontSize(context, {required double fontSize}) {
+  double scallFactor = getScallFactor(context);
   double responsiveFontSize = fontSize * scallFactor;
 
   double lowerLimit = fontSize * .8;
@@ -74,12 +100,14 @@ double getResponsiveFontSize({required double fontSize}) {
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 }
 
-double getScallFactor() {
-  var dispatcher = PlatformDispatcher.instance;
-  var physicalWidth = dispatcher.views.first.physicalSize.width;
-  var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
+double getScallFactor(BuildContext context) {
+  // var dispatcher = PlatformDispatcher.instance;
+  // var physicalWidth = dispatcher.views.first.physicalSize.width;
+  // var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
 
-  var width = physicalWidth / devicePixelRatio;
+  // var width = physicalWidth / devicePixelRatio;
+
+  double width = MediaQuery.sizeOf(context).width;
   if (width < SizeConfig.tablet) {
     return width / 550;
   } else if (width < SizeConfig.desktop) {
